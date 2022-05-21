@@ -11,7 +11,12 @@ This app makes use of the [rc](https://www.npmjs.com/package/rc) module for conf
 I can guarentee this app isn't perfect but fulfills my current needs for routing certain domains to private IP name servers when on VPN.
 
 ## Usage
-download the source code. 
+Download the binary file in release. And `config.json` to the same folder.
+```
+./dns-proxy-xxxx
+```
+
+OR download the source code. 
 ```
 npm install
 npm run start
