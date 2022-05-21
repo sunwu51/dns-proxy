@@ -10,13 +10,13 @@ This app makes use of the [rc](https://www.npmjs.com/package/rc) module for conf
 
 I can guarentee this app isn't perfect but fulfills my current needs for routing certain domains to private IP name servers when on VPN.
 
-## Install
-
-Grab a binary from the release section.
-
-### OLD METHOD
-
-`npm install -g dns-proxy`
+## Usage
+download the source code. 
+```
+npm install
+npm run start
+```
+When the server running, changing the config.json in the workdir can make the server hot reload config. The config detail will be show at following.
 
 ## Features
 
