@@ -1,0 +1,18 @@
+{
+  "port": 53,
+  "host": "0.0.0.0",
+  "logging": "dnsproxy:query,dnsproxy:info",
+  "nameservers": [
+    "8.8.8.8",
+    "114.114.114.114"
+  ],
+  "servers": {},
+  "domains": {
+    "*.abcdef.com": "127.0.0.1"
+  },
+  "hosts": {
+    "devlocal": "127.0.0.1"
+  },
+  "fallback_timeout": 300,
+  "reload_config": true
+}
