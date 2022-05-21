@@ -10,21 +10,21 @@ const util = require('./util.js')
 
 const defaults = {
   port: 53,
-  host: '127.0.0.1',
+  host: '0.0.0.0',
   logging: 'dnsproxy:query,dnsproxy:info',
   nameservers: [
-    '1.1.1.1',
-    '1.0.0.1'
+    '8.8.8.8',
+    '114.114.114.114'
   ],
+  "servers": {},
+  "domains": {},
+  "hosts": {},,
   servers: {},
-  domains: {
-    xdev: '127.0.0.1'
-  },
-  hosts: {
-    devlocal: '127.0.0.1'
-  },
+  domains: {},
+  hosts: {},
   fallback_timeout: 350,
-  reload_config: true
+  reload_config: true,
+  config: './config.json'
 }
 
 let config = rc('dnsproxy', defaults)
@@ -45,7 +45,7 @@ if (config.reload_config === true && typeof config.config !== 'undefined') {
   fs.watchFile(configFile, function (curr, prev) {
     loginfo('config file changed, reloading config options')
     try {
-      config = rc('dnsproxy', defaults)
+      config = rc('dnsproxy', JSON.parse(fs.readFileSync(configFile,'utf-8')))
     } catch (e) {
       logerror('error reloading configuration')
       logerror(e)
