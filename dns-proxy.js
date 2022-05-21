@@ -18,7 +18,7 @@ const defaults = {
   ],
   "servers": {},
   "domains": {},
-  "hosts": {},,
+  "hosts": {},
   servers: {},
   domains: {},
   hosts: {},
